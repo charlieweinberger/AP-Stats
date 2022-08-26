@@ -1,36 +1,40 @@
 import statistics
+from matplotlib import pyplot as plt
 
 class APStats():
     
-    def __init__(self, data, activity, unit):
-        
-        self.data = data
-        self.activity = activity
+    def __init__(self, data, unit=''):
+        self.data = sorted(data)
         self.unit = unit
     
     def mean(self):
-        mean = round(statistics.mean(self.data), 1)
-        print(f'The average student will take {mean} {self.unit} to {self.activity}.')
+        mean = round(statistics.mean(self.data), 2)
+        print(f'mean = {mean}{self.unit}.')
 
     def median(self):
-        median = statistics.median(self.data)
-        print(f'Half of the students will {self.activity} in {median} {self.unit} or fewer.')
+        median = round(statistics.median(self.data), 2)
+        print(f'median = {median}{self.unit}.')
 
-    def IRQ(self, print_quanitles):
-        Q1, Q2, Q3 = [round(q, 1) for q in statistics.quantiles(self.data, n=4)]
-        if print_quanitles:
-            print(f'{Q1 = } {self.unit}')
-            print(f'{Q3 = } {self.unit}')
-        print(f'The middle 50% of times to {self.activity} will vary by {Q3 - Q1} {self.unit}.')
+    def five_point_summary(self):
+        Q1, Q2, Q3 = [round(q, 2) for q in statistics.quantiles(self.data, n=4)]
+        print(f'five point summary: {self.data[0]}, {Q1}, {Q2}, {Q3}, {self.data[-1]}')
+
+    def IRQ(self):
+        Q1, Q2, Q3 = [round(q, 2) for q in statistics.quantiles(self.data, n=4)]
+        print(f'IRQ = {Q3 - Q1}{self.unit}.')
 
     def stdev(self):
         stdev = round(statistics.stdev(self.data), 2)
-        print(f'The typical student will {self.activity} {stdev} {self.unit} before or after the mean time.')
+        print(f'standard deviation = {stdev}{self.unit}.')
 
     def range(self):
-        data_range = self.data[-1] - self.data[0]
-        print(f'The range of the dataset is {data_range} {self.unit}.')
+        data_range = abs(self.data[-1] - self.data[0])
+        print(f'range = {data_range}{self.unit}.')
 
     def variance(self):
         variance = round(statistics.variance(self.data), 2)
-        print(f'The variance of the dataset is {variance} {self.unit} squared.')
+        print(f'variance = {variance}{self.unit} squared.')
+    
+    def hist(self, name, n):
+        plt.hist(self.data, n)
+        plt.savefig(name)

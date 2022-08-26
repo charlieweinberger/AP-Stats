@@ -1,14 +1,14 @@
 from stats import *
 
-data = [15, 18, 22, 23, 26, 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 29, 32, 33, 34, 34, 36, 38, 40, 41, 41, 42, 42, 43, 46, 50, 50]
-activity = 'complete a logic puzzle'
-unit = 'seconds'
+data = [7.5, 4.2, 4.5, 3.4, 1.9, 4.4, 3.1, 3.2, 2.6, 2.6, 2.6, 3.3, 2.8, 2.9, 3.3, 2.3, 1.7, 2.2, 1.5, 1.4]
 
-stats = APStats(data, activity, unit)
+stats = APStats(data, '%')
+stats.hist("plot.png", 6)
 
 stats.mean()
 stats.median()
-stats.IRQ(print_quanitles=False)
+stats.five_point_summary()
+stats.IRQ()
 stats.stdev()
 stats.range()
 stats.variance()
