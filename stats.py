@@ -35,7 +35,7 @@ class APStats():
         variance = round(statistics.variance(self.data), 2)
         print(f'variance = {variance}{self.unit} squared.')
     
-    def histogram(self, name, n):
+    def histogram(self, name, n = max(data) - min(data)):
         plt.figure(1)
         plt.hist(self.data, n)
         plt.savefig(name)
