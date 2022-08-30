@@ -35,12 +35,12 @@ class APStats():
         variance = round(statistics.variance(self.data), 2)
         print(f'variance = {variance}{self.unit} squared.')
     
-    def histogram(self, name, n = max(data) - min(data)):
-        plt.figure(1)
+    def histogram(self, name, n):
+        # plt.figure(1)
         plt.hist(self.data, n)
         plt.savefig(name)
     
     def boxplot(self, name):
-        plt.figure(2)
+        # plt.figure(2)
         plt.boxplot(self.data, vert=False)
         plt.savefig(name)
