@@ -28,19 +28,18 @@ class APStats():
         print(f'standard deviation = {stdev}{self.unit}.')
 
     def range(self):
-        data_range = abs(self.data[-1] - self.data[0])
+        data_range = round(abs(self.data[-1] - self.data[0]), 3)
         print(f'range = {data_range}{self.unit}.')
 
     def variance(self):
         variance = round(statistics.variance(self.data), 2)
         print(f'variance = {variance}{self.unit} squared.')
     
-    def histogram(self, name, n):
-        # plt.figure(1)
-        plt.hist(self.data, n)
-        plt.savefig(name)
-    
-    def boxplot(self, name):
-        # plt.figure(2)
-        plt.boxplot(self.data, vert=False)
-        plt.savefig(name)
+    def all(self):
+        self.mean()
+        self.median()
+        self.five_point_summary()
+        self.IRQ()
+        self.stdev()
+        self.range()
+        self.variance()
