@@ -9,11 +9,11 @@ class APStats():
     
     def mean(self):
         mean = round(statistics.mean(self.data), 2)
-        print(f'mean = {mean}{self.unit}.')
+        print(f'{mean = }{self.unit}.')
 
     def median(self):
         median = round(statistics.median(self.data), 2)
-        print(f'median = {median}{self.unit}.')
+        print(f'{median = }{self.unit}.')
 
     def five_point_summary(self):
         Q1, Q2, Q3 = [round(q, 2) for q in statistics.quantiles(self.data, n=4)]
@@ -33,9 +33,19 @@ class APStats():
 
     def variance(self):
         variance = round(statistics.variance(self.data), 2)
-        print(f'variance = {variance}{self.unit} squared.')
+        print(f'{variance = }{self.unit} squared.')
     
-    def all(self):
+    def percentile(self, x):
+        if x == '': return
+        percentile = len(self.data) * x / 100
+        print(f'{percentile = }')
+
+    def z_score(self, x):
+        if x == '': return
+        z_score = round((x - statistics.mean(self.data)) / statistics.stdev(self.data), 2)
+        print(f'{z_score = }')
+
+    def all(self, x=''):
         self.mean()
         self.median()
         self.five_point_summary()
@@ -43,3 +53,5 @@ class APStats():
         self.stdev()
         self.range()
         self.variance()
+        self.percentile(x)
+        self.z_score(x)
