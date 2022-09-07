@@ -13,3 +13,16 @@ From 2002 to 2004, the average weekly gas price at a service station in the midw
 Page 138 #16:
 
 The distributions represent the mortality rates for men in the large towns north and south of the Derby region. The distribution for the north region is symmetric, with an average mortality rate of 1632 deaths per 100,000 men. The distribution for the south region, which is lower overall than the north region, is skewed right and has an average mortality rate of 1388. This distribution also has a larger spread than the distribution for the north region, with a standard deviation of 138 compared to the north's standard deviation of 151. The north region has one town with an unusually high mortality rate of 2000 deaths per 100,000 men.
+
+Page 131 #26 parts b, c, d, and e:
+
+b) You would expect the central 95% of IQ scores to be between 68 and 132.
+c) About 16% of people should have IQ scores above 116.
+d) About 13.5% of people should have IQ scores between 68 and 84.
+e) About 2.5% of people should have IQ scores above 132.
+
+Page 132 #38:
+
+a) 89.4 percent of people's IQs will be over 80.
+b) 26.5 percent of people's IQs will be under 90.
+c) 20.4 percent of people's IQs will be between 112 and 132.

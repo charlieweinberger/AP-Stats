@@ -3,17 +3,14 @@ from matplotlib import pyplot as plt
 
 class APStats():
     
-    def __init__(self, data, unit=''):
+    def __init__(self, data):
         self.data = sorted(data)
-        self.unit = unit
     
     def mean(self):
-        mean = round(statistics.mean(self.data), 2)
-        print(f'{mean = }{self.unit}.')
+        print(f'mean = {round(statistics.mean(self.data), 2)}')
 
     def median(self):
-        median = round(statistics.median(self.data), 2)
-        print(f'{median = }{self.unit}.')
+        print(f'median = {round(statistics.median(self.data), 2)}')
 
     def five_point_summary(self):
         Q1, Q2, Q3 = [round(q, 2) for q in statistics.quantiles(self.data, n=4)]
@@ -21,29 +18,24 @@ class APStats():
 
     def IRQ(self):
         Q1, Q2, Q3 = [round(q, 2) for q in statistics.quantiles(self.data, n=4)]
-        print(f'IRQ = {Q3 - Q1}{self.unit}.')
+        print(f'IRQ = {Q3 - Q1}')
 
     def stdev(self):
-        stdev = round(statistics.stdev(self.data), 2)
-        print(f'standard deviation = {stdev}{self.unit}.')
+        print(f'standard deviation = {round(statistics.stdev(self.data), 2)}')
 
     def range(self):
-        data_range = round(abs(self.data[-1] - self.data[0]), 3)
-        print(f'range = {data_range}{self.unit}.')
+        print(f'range = {round(abs(self.data[-1] - self.data[0]), 3)}')
 
     def variance(self):
-        variance = round(statistics.variance(self.data), 2)
-        print(f'{variance = }{self.unit} squared.')
+        print(f'variance = {round(statistics.variance(self.data), 2)}')
     
     def percentile(self, x):
         if x == '': return
-        percentile = len(self.data) * x / 100
-        print(f'{percentile = }')
+        print(f'percentile = {len(self.data) * x / 100}')
 
     def z_score(self, x):
         if x == '': return
-        z_score = round((x - statistics.mean(self.data)) / statistics.stdev(self.data), 2)
-        print(f'{z_score = }')
+        print(f'z_score = {round((x - statistics.mean(self.data)) / statistics.stdev(self.data), 2)}')
 
     def all(self, x=''):
         self.mean()
