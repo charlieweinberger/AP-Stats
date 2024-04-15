@@ -1,2 +1,0 @@
-# AP Statistics code
-This repository includes functions that I used to understand and automate basic statistics questions, during my AP Statistics class in high school. Note that I updated this repository frequently but locally, so the day-to-day function calls aren't shown, only the functions themselves.
