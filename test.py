@@ -6,16 +6,12 @@ data = [15, 18, 22, 23, 26, 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 29, 32, 33, 
 stats = APStats(data)
 stats.all(30)
 
-# histogram: plt.hist(data, ___)
-# dotplot: plt.hist(data, max(data) - min(data) + 1)
-# boxplot: plt.boxplot(data, vert=False, positions=[1])
+"""
 
-# plt.savefig("name.png")
+histogram: plt.hist(data)
+dotplot: plt.hist(data, max(data) - min(data) + 1)
+boxplot: plt.boxplot(data, vert=False, positions=[1])
 
-# stats = APStats(data)
-# stats.all(2)
+plt.savefig("name.png")
 
-# press "distr"
-# select normalcdf()
-# input the upper value, mean, and standard deviation
-# result is "amount under curve", so subtract from 1 if finding "above value"
+"""
